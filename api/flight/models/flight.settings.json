@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "flights",
+  "info": {
+    "name": "flight",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "number": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "time"
+    },
+    "city": {
+      "type": "string"
+    },
+    "cities": {
+      "collection": "city",
+      "via": "flights",
+      "dominant": true
+    },
+    "orders": {
+      "via": "flights",
+      "collection": "order"
+    }
+  }
+}
